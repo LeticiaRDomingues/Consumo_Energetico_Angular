@@ -1,4 +1,4 @@
-i<body>
+<body>
 
 <div class="container-xl text-center">
 
@@ -11,12 +11,12 @@ i<body>
     <div class="form">
       <div class="input-group mb-3">
         <form class ="form-floating">
-          <input type="text" class="form-control" id="qtdpessoas">
+          <input type="text" class="form-control" id="qtdpessoas" [(ngModel)]="qtdpessoas">
           <label for="qtdpessoas">Quantas pessoas moram na casa?</label>
         </form>
 
         <form class ="form-floating">
-          <input type="text" class="form-control" id="qtdcomodos">
+          <input type="text" class="form-control" id="qtdcomodos" [(ngModel)]="qtdcomodos">
           <label for="qtdpessoas">Quantos cômodos a casa tem?</label>
         </form>
       </div>
@@ -25,12 +25,12 @@ i<body>
       <div class="form">
         <div class="input-group mb-3">
           <form class ="form-floating">
-            <input type="text" class="form-control" id="qtdtvs">
+            <input type="text" class="form-control" id="qtdtvs" [(ngModel)]="qtdtvs">
             <label for="qtdtvs">Quantas Televisões a casa tem?</label>
           </form>
 
           <form class ="form-floating">
-            <input type="text" class="form-control" id="qtdcomputer">
+            <input type="text" class="form-control" id="qtdcomputer" [(ngModel)]="qtdcomputer">
             <label for="qtdcomputer">Quantos computadores a casa tem?</label>
           </form>
         </div>
@@ -39,7 +39,7 @@ i<body>
         <div class="form">
           <div class="input-group mb-3">
             <form class ="form-floating">
-              <input type="text" class="form-control" id="tarifa">
+              <input type="text" class="form-control" id="tarifa" [(ngModel)]="tarifa">
               <label for="tarifa">Informe o valor da tarifa: </label>
             </form>
           </div>
@@ -50,27 +50,27 @@ i<body>
   <label class="pergunta">Assinale quais desses você possui:</label>
 
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="maquina">
+    <input class="form-check-input" type="checkbox" id="maquina" [(ngModel)]="maquina">
     <label class="form-check-label" for="maquina">
       Máquina de lavar
     </label>
   </div>
 
   <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="secadora">
+    <input class="form-check-input" type="checkbox" id="secadora" [(ngModel)]="secadora">
     <label class="form-check-label" for="secadora">
       Secadora
     </label>
 
   </div>
 
-  <button type="button" class="btn btn-secondary btn-lg">Calcular</button>
+  <button type="button" (click)="calculo()" class="btn btn-secondary btn-lg">Calcular</button>
 
 
  </div>
 
 
-<p id = "resultado" class = "result"></p>
+<p class = "resposta"> Total a pagar: R${{resultado}}</p>
 
 </body>
 
